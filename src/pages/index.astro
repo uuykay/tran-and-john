@@ -1,7 +1,7 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../layouts/layout.astro";
 import bannerImg from "@images/banner.jpg";
-import weathGraphicImg from "@images/wreath-graphic.jpg";
+import wreathGraphicImg from "@images/wreath-graphic.jpg";
 import jandtImg from "@images/j-and-t.jpg";
 import banner2Img from "@images/banner-2.jpg";
 import formalImg from "@images/formal.jpg";
@@ -9,41 +9,55 @@ import beachImg from "@images/piggy-back-on-beach.jpg";
 import cliffImg from "@images/hold-hands-on-cliff.jpg";
 import traditionalImg from "@images/traditional.jpg";
 import { Image } from "astro:assets";
+import Section from "@components/section.astro";
 ---
 
 <Layout title="Trân và John">
-  <main class="px-12">
-    <div class="flex justify-center my-12">
-      <Image src={bannerImg} alt="Save the date" style="max-width:870px" />
-    </div>
-    <h1 class="text-center text-5xl colour-pink mb-3 font-medium">
-      Trân và John
-    </h1>
-    <p class="text-3xl colour-pink leading-12 text-center font-medium">
-      Thân mời, …………………, đến dự tiệc cưới của chúng mình/ chúng em<br /> vào
-      ngày<br /> Chủ nhật, 25 tháng 2 năm 2024<br /> Tại Trung tâm Hội nghị -
-      Tiệc cưới Queen Plaza Kỳ Hòa, Sảnh Queen 6<br /> 16A Lê Hồng Phong (nối
-      dài), Phường 12, Quận 10, TP.HCM
-    </p>
-    <div class="flex justify-center">
-      <Image src={weathGraphicImg} alt="" class="" />
-    </div>
-    <div class="flex justify-center mb-12">
-      <Image src={jandtImg} alt="J Loves T" style="max-width:366px" />
-    </div>
-    <div class="flex justify-center mb-12">
-      <Image src={banner2Img} alt="J Loves T" />
-    </div>
-    <div class="grid grid-cols-3 gap-4 mb-4">
+  <main class="px-3">
+    <Section>
+      <div class="flex justify-center my-12">
+        <Image src={bannerImg} alt="Save the date" class="w-full" />
+      </div>
+      <h1 class="text-center text-5xl colour-pink mb-3 font-medium italic">
+        Trân và John
+      </h1>
+      <p class="text-3xl colour-pink leading-12 text-center font-medium italic">
+        Thân mời, …………………, đến dự tiệc cưới của chúng mình/ chúng em<br /> vào
+        ngày<br /> Chủ nhật, 25 tháng 2 năm 2024<br /> Tại Trung tâm Hội nghị -
+        Tiệc cưới Queen Plaza Kỳ Hòa, Sảnh Queen 6<br /> 16A Lê Hồng Phong (nối
+        dài), Phường 12, Quận 10, TP.HCM
+      </p>
+      <div class="flex justify-center">
+        <Image
+          src={wreathGraphicImg}
+          alt=""
+          class="w-full"
+          style="max-width:716px"
+        />
+      </div>
+      <div class="flex justify-center mb-12">
+        <Image
+          src={jandtImg}
+          alt="J Loves T"
+          style="max-width:486px"
+          class="w-full"
+        />
+      </div>
+      <div class="flex justify-center mb-12">
+        <Image src={banner2Img} alt="J Loves T" class="w-full" />
+      </div>
+    </Section>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
       <div>
-        <Image src={formalImg} alt="" class="rounded-lg" />
+        <Image src={formalImg} alt="" class="rounded-lg w-full" />
       </div>
       <div>
-        <Image src={beachImg} alt="" class="mb-4 rounded-lg" />
-        <Image src={cliffImg} alt="" class="rounded-lg" />
+        <Image src={beachImg} alt="" class="mb-4 rounded-lg w-full" />
+        <Image src={cliffImg} alt="" class="rounded-lg w-full" />
       </div>
       <div>
-        <Image src={traditionalImg} alt="" class="rounded-lg" />
+        <Image src={traditionalImg} alt="" class="rounded-lg w-full" />
       </div>
     </div>
   </main>
