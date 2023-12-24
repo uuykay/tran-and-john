@@ -1,0 +1,22 @@
+---
+export interface Props {
+  ariaLabel: string;
+  imgSrc: string;
+  extraClasses?: string;
+  extraStyles?: string;
+}
+
+const classes = `w-full bg-no-repeat`;
+const baseStyles = `background-image: url('${Astro.props.imgSrc}');`;
+const styles = Astro.props.extraStyles
+  ? `${baseStyles}${Astro.props.extraStyles}`
+  : baseStyles;
+---
+
+<div
+  role="img"
+  aria-label={Astro.props.ariaLabel}
+  class={classes}
+  style={styles}
+>
+</div>
