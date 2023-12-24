@@ -2,13 +2,14 @@
 import Layout from "../layouts/layout.astro";
 import bannerImg from "@images/banner.jpg";
 import wreathGraphicImg from "@images/wreath-graphic.png";
-import jandtImg from "@images/j-and-t.jpg";
-import banner2Img from "@images/banner-2-no-paragraph.jpg";
+import jandtImg from "@images/j-and-t.png";
+import banner2bImg from "@images/banner-2b.png";
 import formalImg from "@images/formal.jpg";
 import beachImg from "@images/piggy-back-on-beach.jpg";
 import cliffImg from "@images/hold-hands-on-cliff.jpg";
 import traditionalImg from "@images/traditional-2.jpg";
 import closingBannerImg from "@images/closing-banner.png";
+import googleMapsPinImg from "@images/google-maps-pin.svg";
 import { Image } from "astro:assets";
 import Section from "@components/section.astro";
 import BackgroundImage from "@components/background-image.astro";
@@ -22,21 +23,54 @@ import BackgroundImage from "@components/background-image.astro";
         extraStyles="height: 217px;background-position-y: 90%;background-position-x: 53%;"
         imgSrc={bannerImg.src}
       />
-    </Section>
-    <Section>
-      <h1
-        class="text-center text-4xl md:text-5xl colour-pink mb-3 font-medium italic"
-      >
-        Trân & John
-      </h1>
-      <p
-        class="text-2xl md:text-3xl colour-pink leading-12 text-center font-medium italic"
-      >
-        Thân mời, …………………, đến dự tiệc cưới của chúng mình/ chúng em<br /> vào
-        ngày<br /> Chủ nhật, 25 tháng 2 năm 2024<br /> Tại Trung tâm Hội nghị -
-        Tiệc cưới Queen Plaza Kỳ Hòa, Sảnh Queen 6<br /> 16A Lê Hồng Phong (nối
-        dài), Phường 12, Quận 10, TP.HCM
-      </p>
+      <div class="border-solid border-4 border-color-pink p-1">
+        <div class="border-solid border-2 border-color-pink py-6 px-3">
+          <h1
+            class="text-center text-6xl md:text-7xl colour-pink mb-3 font-medium italic"
+            style="font-family:Brush Script MT;"
+          >
+            Trân & John
+          </h1>
+          <div
+            class="text-2xl md:text-3xl colour-pink leading-10 md-leading-12 text-center italic font-serif"
+          >
+            <p class="colour-brown">
+              Trân trọng gửi lời mời …………………, đến dự buổi tiệc cưới thân mật
+              chung vui cùng chúng …….
+            </p>
+            <p>
+              <span class="colour-brown">Vào lúc</span>
+              <span class="font-semibold"
+                >11 giờ ngày Chủ nhật, 25 tháng 2 năm 2024</span
+              >
+            </p>
+            <p>
+              <span class="colour-brown">Tại</span>
+              <span class="font-semibold"
+                >Trung tâm Hội nghị - Tiệc cưới Queen Plaza Kỳ Hòa, Sảnh Queen 6</span
+              >
+            </p>
+            <p class="flex justify-center">
+              <Image
+                src={googleMapsPinImg}
+                alt="Google Maps link to venue"
+                class="google-maps-pin mr-1"
+              />
+              <a
+                class="underline hover:text-pink-400"
+                target="_blank"
+                href="https://www.google.com/maps/place/Queen+Plaza+Ky+Hoa/@10.77436,106.6682274,17z/data=!4m14!1m7!3m6!1s0x31752ed95e43c5bb:0xf49973030574f2c2!2sQueen+Plaza+Ky+Hoa!8m2!3d10.77436!4d106.6708023!16s%2Fg%2F11bz149j9y!3m5!1s0x31752ed95e43c5bb:0xf49973030574f2c2!8m2!3d10.77436!4d106.6708023!16s%2Fg%2F11bz149j9y?entry=ttu"
+              >
+                16A Lê Hồng Phong (nối dài), Phường 12, Quận 10, TP.HCM</a
+              >
+            </p>
+            <p class="colour-brown">
+              Sự hiện diện của ………………… là niềm vinh hạnh của chúng ……..
+            </p>
+            <p class="colour-brown">và gia đình!</p>
+          </div>
+        </div>
+      </div>
     </Section>
     <Section>
       <div class="flex justify-center my-6">
@@ -53,20 +87,29 @@ import BackgroundImage from "@components/background-image.astro";
         <Image
           src={jandtImg}
           alt="J Loves T"
-          style="max-width:380px"
+          style="max-width:300px"
           class="w-full"
         />
       </div>
     </Section>
     <Section>
       <div class="flex justify-center my-6 md:my-12">
-        <Image src={banner2Img} alt="" class="w-full" />
+        <Image
+          src={banner2bImg}
+          alt=""
+          class="w-full"
+          style="max-width:380px"
+        />
       </div>
-      <p class="text-center text-2xl md:text-3xl">
-        Album cưới không chỉ là bộ sưu tập hình ảnh, mà nó còn là chiếc cầu nối
-        dẫn chúng ta trở về với những khoảnh khắc tình yêu đẹp đề và ngọt ngào
-        nhất.
-      </p>
+      <div
+        class="text-center text-2xl md:text-3xl colour-pink-2 italic font-serif"
+      >
+        <p class="mb-4">
+          Một vài tấm ảnh cưới của Trân & John ghi lại những khoảnh khắc hạnh
+          phúc nhất trong cuộc đời hai đứa.
+        </p>
+        <p>Rất mong sẽ có ………………. tham dự trong ngày vui của chúng………</p>
+      </div>
     </Section>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
       <div>
@@ -92,9 +135,28 @@ import BackgroundImage from "@components/background-image.astro";
 
 <style>
   .colour-pink {
-    color: rgb(255, 0, 102);
+    color: rgb(255, 93, 97);
   }
-  .leading-12 {
-    line-height: 48px;
+
+  .colour-pink-2 {
+    color: rgb(196, 89, 17);
+  }
+
+  .colour-brown {
+    color: rgb(128, 96, 0);
+  }
+
+  @media (min-width: 768px) {
+    .md-leading-12 {
+      line-height: 48px;
+    }
+  }
+
+  .google-maps-pin {
+    width: 16px;
+  }
+
+  .border-color-pink {
+    border-color: rgb(255, 93, 97);
   }
 </style>
