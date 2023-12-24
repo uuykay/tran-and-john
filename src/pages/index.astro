@@ -35,8 +35,10 @@ import BackgroundImage from "@components/background-image.astro";
             class="text-2xl md:text-3xl colour-pink leading-10 md-leading-12 text-center italic font-serif"
           >
             <p class="colour-brown">
-              Trân trọng gửi lời mời …………………, đến dự buổi tiệc cưới thân mật
-              chung vui cùng chúng …….
+              Trân trọng gửi lời mời <span data-class="name">…………………</span>, đến
+              dự buổi tiệc cưới thân mật chung vui cùng chúng <span
+                data-class="pronoun">……</span
+              >.
             </p>
             <p>
               <span class="colour-brown">Vào lúc</span>
@@ -65,9 +67,10 @@ import BackgroundImage from "@components/background-image.astro";
               >
             </p>
             <p class="colour-brown">
-              Sự hiện diện của ………………… là niềm vinh hạnh của chúng ……..
+              Sự hiện diện của <span data-class="name">…………………</span> là niềm
+              vinh hạnh của chúng <span data-class="pronoun">……</span>
+              <br /><span class="colour-brown">và gia đình!</span>.
             </p>
-            <p class="colour-brown">và gia đình!</p>
           </div>
         </div>
       </div>
@@ -160,3 +163,20 @@ import BackgroundImage from "@components/background-image.astro";
     border-color: rgb(255, 93, 97);
   }
 </style>
+<script>
+  const setAllTextContent = ({ selector, value }) => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach((element) => {
+      element.textContent = value;
+    });
+  };
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const name = urlParams.get("name");
+  const pronoun = urlParams.get("pronoun");
+  console.log({ name, pronoun });
+
+  name && setAllTextContent({ selector: `*[data-class="name"]`, value: name });
+  pronoun &&
+    setAllTextContent({ selector: `*[data-class="pronoun"]`, value: pronoun });
+</script>
