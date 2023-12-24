@@ -1,9 +1,11 @@
 ---
 interface Props {
   title: string;
+  metaImg: string;
+  metaDescription: string;
 }
 
-const { title } = Astro.props;
+const { title, metaImg, metaDescription } = Astro.props;
 import favicon from "../images/favicon.ico";
 ---
 
@@ -18,6 +20,9 @@ import favicon from "../images/favicon.ico";
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href={favicon} />
     <meta name="robots" content="noindex" />
+    <meta property="og:title" content={title} />
+    <meta property="og:image" content={metaImg} />
+    <meta property="og:description" content={metaDescription} />
     <title>{title}</title>
   </head>
   <body>
